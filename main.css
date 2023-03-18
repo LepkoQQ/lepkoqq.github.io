@@ -1,0 +1,48 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.fullpage {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #2d1214, #060e14);
+}
+
+h1 {
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 12%;
+  margin: 0;
+  font-family: "Akshar", system-ui, sans-serif;
+  font-size: 12vmin;
+  color: #2affff;
+  text-shadow: 0 0 32px hsl(180deg 100% 60% / 25%),
+    -15px -4px 12px hsl(180deg 100% 10%);
+  cursor: crosshair;
+  width: 5em;
+  z-index: 2;
+}
+
+.scroll-rows {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 12%;
+  font-family: "Akshar", system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #bb2c19;
+  text-align: right;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 2px hsl(7deg 20% 50% / 30%),
+    15px -4px 3px hsl(7deg 100% 30% / 61%);
+}
