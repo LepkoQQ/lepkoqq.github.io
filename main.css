@@ -21,7 +21,8 @@ h1 {
   font-family: "Akshar", system-ui, sans-serif;
   font-size: 12vmin;
   color: #2affff;
-  text-shadow: 0 0 32px hsl(180deg 100% 60% / 25%),
+  text-shadow:
+    0 0 32px hsl(180deg 100% 60% / 25%),
     -15px -4px 12px hsl(180deg 100% 10%);
   cursor: crosshair;
   width: 5em;
@@ -43,6 +44,55 @@ h1 {
   color: #bb2c19;
   text-align: right;
   letter-spacing: 0.1em;
-  text-shadow: 0 0 2px hsl(7deg 20% 50% / 30%),
+  text-shadow:
+    0 0 2px hsl(7deg 20% 50% / 30%),
     15px -4px 3px hsl(7deg 100% 30% / 61%);
+}
+
+.clock {
+  display: flex;
+  font-family: "Akshar", system-ui, sans-serif;
+  font-size: calc(15vw + 3rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-align: end;
+  color: #2affff;
+  /*
+    not supported for this font
+    font-variant-numeric: tabular-nums;
+  */
+  text-shadow:
+    0 0 32px hsl(180deg 100% 60% / 25%),
+    15px -4px 12px hsl(180deg 100% 10%);
+
+  .clock-number {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: end;
+
+    .tens,
+    .ones {
+      display: grid;
+      place-items: end;
+    }
+
+    .value,
+    .invisible {
+      grid-area: 1 / 1;
+    }
+
+    .invisible {
+      visibility: hidden;
+    }
+  }
+
+  .separator {
+    opacity: 0.33;
+    margin-inline: 0.01em 0.04em;
+    margin-top: -0.08em;
+
+    &.blink {
+      opacity: 0.66;
+    }
+  }
 }
