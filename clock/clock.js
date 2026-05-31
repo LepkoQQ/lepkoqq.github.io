@@ -1,3 +1,19 @@
+// hide mouse cursor after 3 seconds of inactivity
+(async function () {
+  let timeoutId;
+
+  function resetTimeout() {
+    document.body.style.cursor = "default";
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      document.body.style.cursor = "none";
+    }, 3000);
+  }
+
+  document.addEventListener("mousemove", resetTimeout);
+  resetTimeout();
+})();
+
 // update clock
 (async function () {
   const clockElement = document.querySelector(".clock");
