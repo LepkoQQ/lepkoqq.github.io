@@ -5,16 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lepko.net</title>
-    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="./clock.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="fullpage">
+      <div class="weather-container">
+        <div class="weather">
+          <div class="now">
+            <div class="icon"></div>
+            <div class="temperature">
+              <div class="value"></div>
+              <div class="unit"></div>
+            </div>
+            <div class="extra">
+              <div class="humidity">
+                <div class="value"></div>
+                <div class="unit"></div>
+              </div>
+              <div class="pressure">
+                <div class="value"></div>
+                <div class="unit"></div>
+              </div>
+            </div>
+            <div class="wind">
+              <div class="icon"></div>
+              <div class="value"></div>
+              <div class="unit"></div>
+            </div>
+          </div>
+          <div class="sun">
+            <div class="sunrise">
+              <div class="clock-number hours">
+                <div class="tens">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+                <div class="ones">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+              </div>
+              <div class="separator">:</div>
+              <div class="clock-number minutes">
+                <div class="tens">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+                <div class="ones">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+              </div>
+            </div>
+            <div class="icon">
+              <img src="./sun.svg" alt="">
+            </div>
+            <div class="sunset">
+              <div class="clock-number hours">
+                <div class="tens">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+                <div class="ones">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+              </div>
+              <div class="separator">:</div>
+              <div class="clock-number minutes">
+                <div class="tens">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+                <div class="ones">
+                  <div class="value">8</div>
+                  <div class="invisible">8</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="clock-container">
         <div class="clock">
           <div class="clock-number hours">
@@ -51,6 +128,7 @@
           </div>
         </div>
       </div>
+      <div class="bottom-container"></div>
     </div>
     <script type="module" src="clock.js"></script>
   </body>

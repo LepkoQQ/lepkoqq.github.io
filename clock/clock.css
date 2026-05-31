@@ -1,0 +1,181 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.fullpage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #2d1214, #060e14);
+}
+
+.clock-container {
+  margin-block: auto;
+
+  .clock {
+    display: flex;
+    font-family: "Rajdhani", system-ui, sans-serif;
+    font-size: calc(15vw + 3rem);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: #2affff;
+    /* not supported for this font */
+    font-variant-numeric: tabular-nums;
+    text-shadow:
+      0 0 32px hsl(180deg 100% 60% / 25%),
+      15px -4px 12px hsl(180deg 100% 10%);
+  }
+}
+
+.clock,
+.sunrise,
+.sunset {
+  display: flex;
+
+  .clock-number {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    .tens,
+    .ones {
+      display: grid;
+      place-items: center;
+    }
+
+    .value,
+    .invisible {
+      grid-area: 1 / 1;
+    }
+
+    .invisible {
+      visibility: hidden;
+    }
+  }
+
+  .separator {
+    opacity: 0.33;
+
+    &.blink {
+      opacity: 0.66;
+    }
+  }
+}
+
+.weather-container {
+  --gap-size: calc(3vw + 1.5rem);
+  width: 100%;
+  margin-top: calc(0.75 * var(--gap-size));
+  margin-bottom: calc(-1.5 * var(--gap-size));
+
+  .weather {
+    display: flex;
+    gap: var(--gap-size);
+    padding-inline: var(--gap-size);
+    font-family: "Rajdhani", system-ui, sans-serif;
+    line-height: 1;
+    text-align: center;
+    color: hsl(0deg 0% 80%);
+    /* not supported for this font */
+    font-variant-numeric: tabular-nums;
+    text-shadow:
+      0 0 12px hsla(0deg 0% 100% / 33%),
+      6px -2px 6px hsl(0deg 0% 100% / 10%);
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 4rem;
+      height: 4rem;
+      opacity: 0.8;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(6px -2px 6px hsl(0deg 0% 100% / 33%));
+      }
+    }
+
+    .now {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      .icon {
+        --font-size: calc(3vw + 1.5rem);
+        --icon-size: calc(1.25 * var(--font-size));
+        width: var(--icon-size);
+        height: var(--icon-size);
+      }
+
+      .temperature {
+        display: flex;
+        margin-top: 0.0625em;
+        font-size: calc(3vw + 1.5rem);
+        font-weight: 700;
+
+        .unit {
+          margin-left: 0.25ch;
+        }
+      }
+
+      .extra {
+        display: flex;
+        gap: 0.375rem;
+        flex-direction: column;
+        margin-inline: 1rem;
+        color: hsl(0deg 0% 70%);
+
+        .humidity,
+        .pressure {
+          display: flex;
+          font-size: calc(1vw + 0.5rem);
+          font-weight: 500;
+
+          .unit {
+            margin-left: 0.5ch;
+          }
+        }
+      }
+
+      .wind {
+        display: flex;
+        font-size: calc(1.5vw + 0.75rem);
+        font-weight: 500;
+
+        .icon {
+          --icon-size: calc(1.25 * 1em);
+          width: var(--icon-size);
+          height: var(--icon-size);
+        }
+
+        .value,
+        .unit {
+          margin-top: 0.125em;
+          margin-left: 0.5ch;
+        }
+      }
+    }
+  }
+
+  .sun {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: calc(1.25vw + 0.5rem);
+    font-weight: 500;
+
+    .icon {
+      --icon-size: calc(1.5 * 1em);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      margin-top: -0.75em;
+      margin-inline: 0.5rem;
+    }
+  }
+}
