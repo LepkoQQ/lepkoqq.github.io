@@ -178,4 +178,11 @@ body {
       margin-inline: 0.5rem;
     }
   }
+
+  .updated {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+  }
 }
